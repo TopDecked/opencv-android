@@ -1,29 +1,29 @@
 buildscript {
-  repositories {
-    jcenter()
-    mavenCentral()
-  }
-  dependencies {
-    classpath 'com.android.tools.build:gradle:2.3.0-beta3'
-    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
-    classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
-  }
-}
-allprojects {
-  repositories {
-    jcenter()
-    mavenCentral()
-    maven {
-      url "http://dl.bintray.com/felipegr6/maven"
+    apply from: 'versions.gradle'
+    repositories {
+        jcenter()
+        mavenCentral()
     }
-  }
-  tasks.withType(Javadoc) {
-    options.addStringOption('Xdoclint:none', '-quiet')
-    options.addStringOption('encoding', 'UTF-8')
-    excludes = ['**/*.kt', '**/*.aidl']
-  }
+    dependencies {
+        classpath "com.android.tools.build:gradle:${androidPluginVer}"
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:${bintrayPluginVer}"
+        classpath "com.github.dcendents:android-maven-gradle-plugin:${mavenPluginVer}"
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven { url "http://dl.bintray.com/andmar1x/maven" }
+    }
+    tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.addStringOption('encoding', 'UTF-8')
+        excludes = ['**/*.kt', '**/*.aidl']
+    }
 }
 
 task clean(type: Delete) {
-  delete rootProject.buildDir
+    delete rootProject.buildDir
 }

@@ -1,0 +1,12 @@
+ext {
+    // Android gradle plugin.
+    androidPluginVer = "2.4.0-alpha3"
+    bintrayPluginVer = "1.7.3"
+    mavenPluginVer = "1.5"
+    // Android Build Tools.
+    buildToolsVer = "25.0.2"
+    // Android SDK.
+    minSdkVer = 15
+    targetSdkVer = 25
+    compileSdkVer = 25
+}
