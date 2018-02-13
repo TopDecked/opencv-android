@@ -1,10 +1,8 @@
-# OpenCV Java project for Android
+# OpenCV for Android
 [![Build Status](https://travis-ci.org/piruin/opencv-android.svg?branch=master)](https://travis-ci.org/piruin/opencv-android)
 [![Download](https://api.bintray.com/packages/blazei/maven/opencv-android/images/download.svg) ](https://bintray.com/blazei/maven/opencv-android/_latestVersion)
 
-The [OpenCV](https://github.com/opencv/opencv) library for Android as Gradle project.
-
-All credit goes to http://opencv.org/ I've took their library and exported it as `.aar` library. Now you can easily use OpenCV in a Gradle / Android Studio project.
+I've took [OpenCV Library](https://github.com/opencv/opencv) and exported it as `.aar` library. Now you can easily use OpenCV in a Gradle / Android Studio project.
 
 ## Usage Maven Repo
 
@@ -22,6 +20,7 @@ dependencies {
 See download badge for latest version
 
 ## License
+All credit goes to [OpenCV](http://opencv.org/)
 
 ```text
 By downloading, copying, installing or using the software you agree to this license.
