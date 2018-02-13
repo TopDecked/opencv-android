@@ -33,10 +33,10 @@ bintray {
         publish = true
         websiteUrl = siteUrl
         vcsUrl = gitUrl
+        licenses = allLicenses
         publicDownloadNumbers = true
         version {
             name = project.version
-            desc = libraryDescription
             released = new Date()
             vcsTag = project.version
         }
