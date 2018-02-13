@@ -1,13 +1,12 @@
 buildscript {
-    apply from: 'versions.gradle'
     repositories {
         jcenter()
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:${androidPluginVer}"
-        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:${bintrayPluginVer}"
-        classpath "com.github.dcendents:android-maven-gradle-plugin:${mavenPluginVer}"
+        classpath "com.android.tools.build:gradle:3.0.1"
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3"
+        classpath "com.github.dcendents:android-maven-gradle-plugin:1.5"
     }
 }
 
@@ -24,6 +23,7 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.5.1'
 }
+
