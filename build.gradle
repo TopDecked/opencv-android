@@ -24,7 +24,6 @@ allprojects {
     repositories {
         jcenter()
         mavenCentral()
-        maven { url "http://dl.bintray.com/andmar1x/maven" }
     }
     tasks.withType(Javadoc) {
         options.addStringOption('Xdoclint:none', '-quiet')
