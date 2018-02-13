@@ -1,4 +1,5 @@
 # OpenCV Java project for Android
+[![Build Status](https://travis-ci.org/piruin/opencv-android.svg?branch=master)](https://travis-ci.org/piruin/opencv-android)
 
 The OpenCV library for Android as Gradle project.
 
