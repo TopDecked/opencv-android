@@ -1,32 +1,39 @@
 apply plugin: 'com.android.library'
 
-apply from: '../versions.gradle'
+group = rootProject.group
+version = rootProject.version
 
 ext {
     bintrayRepo = 'maven'
-    bintrayName = 'opencv-android'
-    publishedGroupId = 'org.opencv'
+    bintrayName = project.name
+    publishedGroupId = project.group
     libraryName = 'OpenCV Android'
-    artifact = 'opencv-android'
+    artifact = project.name
     libraryDescription = 'The OpenCV library for Android as Gradle project'
-    siteUrl = 'https://github.com/andmar1x/opencv-android'
-    gitUrl = 'https://github.com/andmar1x/opencv-android.git'
-    libraryVersion = '3.2.0'
-    developerId = 'andmar1x'
-    developerName = 'Andrei Pugachev'
-    developerEmail = 'andmar1x@gmail.com'
+    siteUrl = 'https://github.com/piruin/opencv-android'
+    gitUrl = 'https://github.com/piruin/opencv-android.git'
+    libraryVersion = project.version
+    developerId = 'piruin'
+    developerName = 'Piruin Panichphol'
+    developerEmail = 'piruin.p@gmail.com'
     licenseName = 'The 3-Clause BSD License'
     licenseUrl = 'https://opensource.org/licenses/BSD-3-Clause'
     allLicenses = ["BSD 3-Clause"]
+
+    def versionToken = project.version.tokenize( ".|-" )
+    int versionMajor = versionToken[0] as Integer
+    int versionMinor = versionToken[1] as Integer
+    int versionPatch = versionToken[2] as Integer
+    libraryVersionCode = versionMajor * 10000 + versionMinor * 100 + versionPatch
+
 }
 
 android {
-    compileSdkVersion compileSdkVer
-    buildToolsVersion buildToolsVer
+    compileSdkVersion 26
     defaultConfig {
-        minSdkVersion minSdkVer
-        targetSdkVersion targetSdkVer
-        versionCode 1
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode libraryVersionCode
         versionName libraryVersion
     }
     buildTypes {

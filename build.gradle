@@ -1,3 +1,13 @@
+group = 'org.opencv'
+version = {->
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'describe', '--tags'
+        standardOutput = stdout
+    }
+    return stdout.toString().trim()
+}.call()
+
 buildscript {
     repositories {
         jcenter()
