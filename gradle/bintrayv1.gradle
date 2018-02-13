@@ -21,13 +21,9 @@ artifacts {
     archives sourcesJar
 }
 
-// Bintray
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-
 bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
+    user = project.hasProperty('bintrayUser') ? project.getProperty('bintrayUser') : System.getenv('BINTRAY_USER') ?: ''
+    key = project.hasProperty('bintrayKey') ? project.getProperty('bintrayKey') : System.getenv('BINTRAY_KEY') ?: ''
 
     configurations = ['archives']
     pkg {
@@ -35,9 +31,14 @@ bintray {
         name = bintrayName
         desc = libraryDescription
         publish = true
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
         publicDownloadNumbers = true
         version {
+            name = project.version
             desc = libraryDescription
+            released = new Date()
+            vcsTag = project.version
         }
     }
 }

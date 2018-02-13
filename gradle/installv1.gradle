@@ -23,9 +23,9 @@ install {
                     }
                 }
                 scm {
-                    //connection gitUrl
-                    //developerConnection gitUrl
-                    //url siteUrl
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
                 }
             }
         }
