@@ -1,10 +1,9 @@
-
 //
 // This file is auto-generated. Please don't modify it!
 //
 package org.opencv.ml;
 
-
+import org.opencv.ml.ANN_MLP;
 
 // C++: class ANN_MLP_ANNEAL
 //javadoc: ANN_MLP_ANNEAL
@@ -13,6 +12,8 @@ public class ANN_MLP_ANNEAL extends ANN_MLP {
 
     protected ANN_MLP_ANNEAL(long addr) { super(addr); }
 
+    // internal usage only
+    public static ANN_MLP_ANNEAL __fromPtr__(long addr) { return new ANN_MLP_ANNEAL(addr); }
 
     //
     // C++:  double getAnnealCoolingRatio()

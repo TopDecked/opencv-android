@@ -1,4 +1,3 @@
-
 //
 // This file is auto-generated. Please don't modify it!
 //
@@ -412,6 +411,8 @@ public class Videoio {
             CAP_PROP_SETTINGS = 37,
             CAP_PROP_BUFFERSIZE = 38,
             CAP_PROP_AUTOFOCUS = 39,
+            CAP_PROP_SAR_NUM = 40,
+            CAP_PROP_SAR_DEN = 41,
             CAP_MODE_BGR = 0,
             CAP_MODE_RGB = 1,
             CAP_MODE_GRAY = 2,

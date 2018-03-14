@@ -1,4 +1,3 @@
-
 //
 // This file is auto-generated. Please don't modify it!
 //
@@ -13,6 +12,7 @@ import org.opencv.core.MatOfInt;
 import org.opencv.core.MatOfRect;
 import org.opencv.core.Scalar;
 import org.opencv.core.Size;
+import org.opencv.dnn.Net;
 import org.opencv.utils.Converters;
 
 // C++: class Dnn
@@ -23,6 +23,7 @@ public class Dnn {
     public static final int
             DNN_BACKEND_DEFAULT = 0,
             DNN_BACKEND_HALIDE = 1,
+            DNN_BACKEND_INFERENCE_ENGINE = 2,
             DNN_TARGET_CPU = 0,
             DNN_TARGET_OPENCL = 1;
 
@@ -216,6 +217,21 @@ public class Dnn {
 
 
     //
+    // C++:  void imagesFromBlob(Mat blob_, vector_Mat& images_)
+    //
+
+    //javadoc: imagesFromBlob(blob_, images_)
+    public static void imagesFromBlob(Mat blob_, List<Mat> images_)
+    {
+        Mat images__mat = new Mat();
+        imagesFromBlob_0(blob_.nativeObj, images__mat.nativeObj);
+        Converters.Mat_to_vector_Mat(images__mat, images_);
+        images__mat.release();
+        return;
+    }
+
+
+    //
     // C++:  void shrinkCaffeModel(String src, String dst, vector_String layersTypes = std::vector<String>())
     //
 
@@ -271,6 +287,9 @@ public class Dnn {
     // C++:  void NMSBoxes(vector_Rect bboxes, vector_float scores, float score_threshold, float nms_threshold, vector_int& indices, float eta = 1.f, int top_k = 0)
     private static native void NMSBoxes_0(long bboxes_mat_nativeObj, long scores_mat_nativeObj, float score_threshold, float nms_threshold, long indices_mat_nativeObj, float eta, int top_k);
     private static native void NMSBoxes_1(long bboxes_mat_nativeObj, long scores_mat_nativeObj, float score_threshold, float nms_threshold, long indices_mat_nativeObj);
+
+    // C++:  void imagesFromBlob(Mat blob_, vector_Mat& images_)
+    private static native void imagesFromBlob_0(long blob__nativeObj, long images__mat_nativeObj);
 
     // C++:  void shrinkCaffeModel(String src, String dst, vector_String layersTypes = std::vector<String>())
     private static native void shrinkCaffeModel_0(String src, String dst, List<String> layersTypes);

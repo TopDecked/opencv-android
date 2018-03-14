@@ -1,4 +1,3 @@
-
 //
 // This file is auto-generated. Please don't modify it!
 //
@@ -7,6 +6,8 @@ package org.opencv.ml;
 import java.lang.String;
 import org.opencv.core.Mat;
 import org.opencv.core.TermCriteria;
+import org.opencv.ml.ANN_MLP;
+import org.opencv.ml.StatModel;
 
 // C++: class ANN_MLP
 //javadoc: ANN_MLP
@@ -15,6 +16,8 @@ public class ANN_MLP extends StatModel {
 
     protected ANN_MLP(long addr) { super(addr); }
 
+    // internal usage only
+    public static ANN_MLP __fromPtr__(long addr) { return new ANN_MLP(addr); }
 
     public static final int
             BACKPROP = 0,
@@ -66,7 +69,7 @@ public class ANN_MLP extends StatModel {
     public static ANN_MLP create()
     {
         
-        ANN_MLP retVal = new ANN_MLP(create_0());
+        ANN_MLP retVal = ANN_MLP.__fromPtr__(create_0());
         
         return retVal;
     }
@@ -80,7 +83,7 @@ public class ANN_MLP extends StatModel {
     public static ANN_MLP load(String filepath)
     {
         
-        ANN_MLP retVal = new ANN_MLP(load_0(filepath));
+        ANN_MLP retVal = ANN_MLP.__fromPtr__(load_0(filepath));
         
         return retVal;
     }
